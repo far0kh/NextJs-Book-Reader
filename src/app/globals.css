@@ -1,19 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 body {
   background-color: #f2dfce;
-  margin: 8px;
 }
-
-h1 h2 h3 h4 p span li a {}
 
 .bookContainer {
   height: 80vh;
   width: 95%;
   margin: auto;
-
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -39,12 +31,10 @@ h1 h2 h3 h4 p span li a {}
 
 .floating-toolbar-close {
   background: #ffd9d9;
-
 }
 
 .modal-content-reed {
   background: #daa4a4;
-
 }
 
 .btn-submit-reed {
@@ -53,7 +43,6 @@ h1 h2 h3 h4 p span li a {}
 
 .hover-card {
   background: #f2dfce;
-
 }
 
 .center {

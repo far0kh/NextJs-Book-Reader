@@ -15,8 +15,6 @@ export default function Header() {
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
         />
-
-
       </motion.div>
 
       <motion.div style={rightContainerStyle}
@@ -25,10 +23,7 @@ export default function Header() {
       >
         <Link href="/profile" style={avatarLinkStyle}>
           <motion.img src="https://imageio.forbes.com/specials-images/imageserve/6244c655b6ecfb569a31a3ba/John-Cena-performing-his-famous--You-Can-t-See-Me--taunt-/0x0.jpg?format=jpg&crop=1200,675,x0,y0,safe&width=960" alt="avatar" style={avatarStyle} initial={{ opacity: 0, x: 100 }} animate={{ opacity: 1, x: 0 }} />
-
-
         </Link>
-
       </motion.div>
     </header>
   )
@@ -39,7 +34,6 @@ const headerStyle = {
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-  padding: '1rem 1rem 1rem 0',
   color: '#fff'
 }
 
@@ -54,7 +48,7 @@ const bookTitleStyle = {
 }
 
 const searchInputStyle = {
-  padding: "0.7rem 1rem",
+  padding: '0.7rem 1rem',
   marginLeft: '3.6rem',
   borderRadius: '70px',
   backgroundColor: 'rgb(248,234,221)',
@@ -72,7 +66,7 @@ const avatarLinkStyle = {
 }
 
 const avatarStyle = {
-  width: "40px",
+  width: '40px',
   height: '40px',
   borderRadius: '50%'
 }

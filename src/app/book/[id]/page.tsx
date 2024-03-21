@@ -2,7 +2,7 @@
 import { books } from "@/constants/mockData"
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import { motion } from 'framer-motion'
-import { useParams } from "next/navigation"
+import { useParams, useRouter } from "next/navigation"
 import { useEffect } from "react"
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -10,10 +10,9 @@ import { Editor, useDomValue } from "reactjs-editor"
 import styles from './book.module.css'
 
 export default function BookPage() {
+  const router = useRouter()
   const { id } = useParams()
-
   const { dom, setDom } = useDomValue();
-
   const selectedBook = books.filter((book, i) => {
     return id === String(book.id)
   })
@@ -39,7 +38,6 @@ export default function BookPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-
   if (!selectedBook.length) return <p>Book not found</p>
 
   return (
@@ -47,7 +45,7 @@ export default function BookPage() {
       initial={{ opacity: 0, x: 1000 }} animate={{ opacity: 1, x: 0 }}>
       <motion.section transition={{ type: 'spring', damping: 44, mass: 0.75 }}
         initial={{ opacity: 0, y: -1000 }} animate={{ opacity: 1, y: 0 }} className={styles.appBar}>
-        <div className={styles.leftIcons} >
+        <div className={styles.leftIcons} onClick={() => router.back()} >
           <i style={{ fontSize: '20px', cursor: 'pointer' }} className="fas fa-chevron-left"></i>
         </div>
         <div className={styles.title}>  <h2 className={styles.titleStyles}> {selectedBook[0].title}</h2></div>
@@ -74,6 +72,5 @@ export default function BookPage() {
     </motion.div>
   )
 }
-
 
 const iconStyle = { marginRight: '20px', fontSize: '20px' }
